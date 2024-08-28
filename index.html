@@ -1,1 +1,44 @@
-<h1>hi</h1>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GitHub Repo Info</title>
+        <style>
+            body { font-family: Arial, sans-serif; }
+            .repo-list { margin-top: 20px; }
+            .repo { margin-bottom: 10px; }
+        </style>
+    </head>
+    <body>
+        <h1>GitHub Repository Info</h1>
+        <div id="repo-info" class="repo-list"></div>
+    
+        <script>
+            // Replace 'YOUR_GITHUB_USERNAME' with your GitHub username
+            const username = 'kokorocks';
+            const apiUrl = `https://api.github.com/users/${username}/repos`;
+            const url = 'https://corsproxy.io/?' + encodeURIComponent(apiUrl)
+    
+            async function fetchRepoInfo() {
+                try {
+                    const response = await fetch(url);
+    
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+    
+                    const repos = await response.json();
+                    let j=[]
+                    repos.forEach(repo => {
+                        j.push(repo)
+                        console.log(repo)
+                    });
+                    console.log(j)}
+                catch(error) {
+                    console.error(error)
+                }}
+            fetchRepoInfo();
+        </script>
+    </body>
+    </html>    
