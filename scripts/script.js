@@ -47,7 +47,7 @@ function parseint(input){
 }
 };
 
-window.onload = function(){
+function users_repos(username){
     async function hashString(text) {
         const input = text;
         const encoder = new TextEncoder(); // Encoder to convert text to Uint8Array
@@ -58,9 +58,8 @@ window.onload = function(){
         return hashHex; // Display the hash
     }
     // Replace 'YOUR_GITHUB_USERNAME' with your GitHub username
-    const username = 'kokorocks';
-    const apiUrl = `https://api.github.com/users/${username}/repos`;
-    const url = 'https://corsproxy.io/?' + encodeURIComponent(apiUrl)
+    let apiUrl = `https://api.github.com/users/${username}/repos`;
+    let url = 'https://corsproxy.io/?' + encodeURIComponent(apiUrl)
 
     async function fetchRepoInfo() {
         try {
@@ -82,3 +81,4 @@ window.onload = function(){
         }}
     fetchRepoInfo();
 }
+window.onload = function(){users_repos('kokorocks')}

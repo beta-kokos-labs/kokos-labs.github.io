@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GitHub Repo Info</title>
+        <style>
+            body { font-family: Arial, sans-serif; }
+            .repo-list { margin-top: 20px; }
+            .repo { margin-bottom: 10px; }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="fun.html">user repo visualizer</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+        <canvas id="myCanvas" width="256" height="256"></canvas>
+        <script src="scripts/script.js"></script>
+        <h3>you try</h3>
+        <input type="text" placeholder="put you or someone elses username or organization" id="choose">
+        <button id="go">go?</button>
+    <script>document.getElementById('go').onclick = function(){let username=document.getElementById('choose').value;users_repos(username)}</script></main>
+        <footer>
+            <p></p><!--a href="mailto:ejkmatthison@gmail.com"></a-->
+        </footer>
+    </body>
+    </html>    
